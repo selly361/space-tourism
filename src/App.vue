@@ -1,26 +1,51 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
+<script setup>
+import { ref } from "vue";
+import NavBarVue from "@/components/layout/NavBar.vue";
+import {
+  HomePageVue,
+  CrewPageVue,
+  TechnologyPageVue,
+  DestinationPageVue,
+} from "./pages";
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+const routes = {
+  "/": HomePageVue,
+  "/crew": CrewPageVue,
+  "/technology": TechnologyPageVue,
+  "/destination": DestinationPageVue,
+};
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+const path = ref(location.pathname);
+
+
 </script>
 
+<template>
+  <NavBarVue />
+  <component :is="routes[path]" />
+</template>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700&family=Bellefair&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  font-family: "Bellefair";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 172px;
+  color: #ffffff;
 }
 </style>
