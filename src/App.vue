@@ -36,8 +36,9 @@ const path = ref(location.pathname);
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -47,5 +48,11 @@ h1 {
   font-size: 150px;
   line-height: 172px;
   color: #ffffff;
+}
+
+a, button {
+  text-decoration: unset;
+  border: unset;
+  outline: unset;
 }
 </style>
