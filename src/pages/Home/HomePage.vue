@@ -11,7 +11,7 @@
           experience!
         </p>
       </section>
-        <a href="#/destination">EXPLORE</a>
+        <a href="/destination">EXPLORE</a>
     </article>
   </main>
 </template>

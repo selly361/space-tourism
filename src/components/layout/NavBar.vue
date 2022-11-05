@@ -1,6 +1,6 @@
 <template>
   <header>
-    <a href="#/">
+    <a href="/">
       <img src="@/assets/icons/logo.svg" />
     </a>
 
@@ -10,7 +10,7 @@
         :key="label"
         :class="{ active: currentPath === path }"
       >
-        <a :href="'#' + path">
+        <a :href="path">
           <strong> 0{{ index }} </strong>
           {{ label }}
         </a>
@@ -23,11 +23,9 @@
 import { navItems } from "./nav-items";
 import { ref } from "vue";
 
-const currentPath = ref(window.location.hash.slice(1));
+const currentPath = ref(window.location.pathname);
 
-window.addEventListener("hashchange", () => {
-  currentPath.value = window.location.hash.slice(1);
-});
+
 
 </script>
 
@@ -80,7 +78,7 @@ a {
   color: #ffffff;
 }
 
-li.active {
+li.active, li.unActive {
   border-bottom: 3px solid #ffffff;
 }
 
