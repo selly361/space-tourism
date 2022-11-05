@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import NavBarVue from "@/components/layout/NavBar.vue";
+
 import {
   HomePageVue,
   CrewPageVue,
@@ -15,19 +16,26 @@ const routes = {
   "/destination": DestinationPageVue,
 };
 
-const path = ref(location.pathname);
 
 
+const currentPath = ref(window.location.hash);
+
+window.addEventListener("hashchange", () => {
+  currentPath.value = window.location.hash;
+});
+
+const currentView = computed(() => {
+  return routes[currentPath.value.slice(1) || "/"];
+});
 </script>
 
 <template>
   <NavBarVue />
-  <component :is="routes[path]" />
+  <component :is="currentView" />
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700&family=Bellefair&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700&family=Bellefair&display=swap");
 
 * {
   box-sizing: border-box;
@@ -50,7 +58,8 @@ h1 {
   color: #ffffff;
 }
 
-a, button {
+a,
+button {
   text-decoration: unset;
   border: unset;
   outline: unset;
