@@ -40,6 +40,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 30;
 }
 
 img {

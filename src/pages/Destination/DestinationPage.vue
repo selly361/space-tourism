@@ -2,8 +2,8 @@
   <main>
     <div class="container">
       <div class="intro">
-        <p>01</p>
-        <h2 class="title">Pick your destination</h2>
+        <strong>01</strong>
+        <h6>Pick your destination</h6>
       </div>
       <div class="content">
         <img :src="currentTab.images.png" />
@@ -108,25 +108,7 @@ li:hover {
   height: max-content;
 }
 
-.intro p {
-  font-family: "Barlow Condensed";
-  font-weight: 700;
-  font-size: 28px;
-  letter-spacing: 4.725px;
-  color: #ffffff;
-  opacity: 0.25;
-}
 
-.title {
-  font-family: "Barlow Condensed";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: 4.725px;
-  text-transform: uppercase;
-  color: #ffffff;
-}
 
 .content {
   width: 100%;
@@ -179,5 +161,9 @@ li:hover {
 
 .planet-name {
   text-transform: uppercase;
+}
+
+img {
+  margin-left: 160px;
 }
 </style>

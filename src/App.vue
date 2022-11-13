@@ -33,9 +33,16 @@ const path = ref(location.pathname);
 }
 
 body {
-  min-height: 100vh;
+  min-height: 900px;
   width: 100vw;
   overflow-x: hidden;
+
+}
+
+
+main {
+  min-height: 900px;
+
 }
 
 h1 {
@@ -68,5 +75,18 @@ button {
   text-decoration: unset;
   border: unset;
   outline: unset;
+}
+
+
+h6 {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 4.725px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 3rem;
 }
 </style>
